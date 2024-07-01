@@ -288,7 +288,7 @@ def claim_daily(token):
     response = requests.post(url, headers=headers, json=data)
     if response.status_code == 200:
         result = response.json()
-        print(Fore.GREEN + "[ Claim Daily ]: Claim daily berhasil!" + Style.RESET_ALL)  # Warna hijau jika claim daily berhasil
+        print(Fore.GREEN + f"[ Claim Daily ]: Claim daily berhasil! Reward: {result.get('reward_text')}" + Style.RESET_ALL)  # Warna hijau jika claim daily berhasil
     else:
         print(Fore.RED + "[ Claim Daily ]: Tidak ada claim daily" + Style.RESET_ALL)  # Warna merah jika claim daily gagal
 
